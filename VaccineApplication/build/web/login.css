@@ -1,0 +1,184 @@
+/* Base Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #004e92; /* Darker blue background */
+    color: #333;
+}
+
+/* Header and Title */
+header h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #f0f4f8;
+    margin: 0;
+    padding: 20px 0;
+    font-family: 'Times New Roman', serif;
+    font-weight: normal;
+    background-color: #0067c7; /* Blue color that fills the gaps */
+}
+
+/* Navigation Bar Styling */
+.topnav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.topnav a {
+    color: #f0f4f8;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.topnav a:hover {
+    background-color: white;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #32e010;
+    color: white;
+}
+
+/* Slide-in Animation Keyframes */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply Animation to Fieldsets */
+form#patient > fieldset {
+    animation: slideIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Staggered Animation Delay for Each Fieldset */
+form#patient > fieldset#Info1 {
+    animation-delay: 0.2s;
+}
+
+form#patient > fieldset#Info2 {
+    animation-delay: 0.4s;
+}
+
+form#patient > fieldset#Info3 {
+    animation-delay: 0.6s;
+}
+
+/* Form Wrapper Styling */
+form#patient {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center the forms */
+    max-width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background: #f0f8ff; /* Light blue for form background */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Equal Width for All Fieldsets */
+form#patient > fieldset {
+    width: 300px; /* Fixed width to make all forms the same size */
+    margin: 15px;
+    padding: 15px;
+    background: #b3d9ff; /* Softer blue for fieldset */
+    border-radius: 15px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 auto;
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #004e92;
+    padding: 5px 10px;
+    background: #e0f2ff;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels and Inputs */
+label {
+    display: inline-block;
+    width: 150px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="date"], input[type="number"], select {
+    width: calc(100% - 160px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="date"]:focus, input[type="number"]:focus, select:focus {
+    border-color: #32e010;
+    box-shadow: 0 0 8px rgba(50, 224, 16, 0.3);
+}
+
+/* Radio and Checkbox Styling */
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+/* Button Container Styling */
+#buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+/* Button Styling */
+#buttons input[type="submit"], #buttons input[type="reset"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+}
+
+#buttons input[type="submit"] {
+    background: #4caf50;
+    color: #fff;
+}
+
+#buttons input[type="reset"] {
+    background: #e74c3c;
+    color: #fff;
+}
+
+#buttons input[type="submit"]:hover {
+    background: #45a049;
+}
+
+#buttons input[type="reset"]:hover {
+    background: #d63031;
+}
+
+/* General Hover and Focus Effects */
+input:hover, select:hover {
+    background: #f0f4f8;
+}

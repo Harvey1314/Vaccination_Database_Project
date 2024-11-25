@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>MainInfoServlet</servlet-name>
+        <servlet-class>servlets.MainInfoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExistingPatientServlet</servlet-name>
+        <servlet-class>servlets.ExistingPatientServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RetrieveDataServlet</servlet-name>
+        <servlet-class>servlets.RetrieveDataServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateDataServlet</servlet-name>
+        <servlet-class>servlets.UpdateDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MainInfoServlet</servlet-name>
+        <url-pattern>/MainInfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExistingPatientServlet</servlet-name>
+        <url-pattern>/ExistingPatient</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RetrieveDataServlet</servlet-name>
+        <url-pattern>/RetrieveData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateDataServlet</servlet-name>
+        <url-pattern>/UpdateData</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

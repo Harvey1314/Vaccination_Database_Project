@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vaccination Administration Data</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="login.css">
+        <style>
+            .topnav {
+               overflow: hidden;
+               background-color: #333;
+            }
+
+            .topnav a {
+                float: right;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .topnav a.active {
+                background-color: #04AA6D;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Adding A New Record for New Patients</h1> 
+            <div class="topnav">
+                <a href="MainInfo.jsp">Main Page</a>
+                <a class="active" href="index.html">New Patient</a>
+                <a  href="ExistingPatient.jsp">Existing Patient</a>
+                <a href="RetrieveData.jsp">Retrieve Data</a>
+                <a href="login.jsp">Log Out</a>
+            </div>   
+        </header>
+        <form id="patient" action="Vaccine.jsp" method="post">
+            <fieldset id="Info1">
+            <legend>1st Form:</legend>
+            <h3 id='paInfo'>Patient Information</h3>
+            <div>
+                <label for="fname">First Name*:</label>
+                <input type="text" name="fname" id="fname" oninvalid="InvalidFN(this);" oninput="InvalidFN(this);" required="required">
+                <script>
+                    function InvalidFN(fn) {
+                        if (fn.value === '') {
+                            fn.setCustomValidity('Last Name cannot be empty');
+                        } else {
+                            fn.setCustomValidity('');
+                        }
+                        return true;
+                    }
+                </script>
+            </div>
+            <div>
+                <label for="mname"> Initial:</label>
+                <input type="text" name="mname" id="mname">
+            </div>
+            <div>
+                <label for="lname">Last Name*:</label>
+                <input type="text" name="lname" id="lname" oninvalid="InvalidLN(this);" oninput="InvalidLN(this);" required="required">
+                <script>
+                    function InvalidLN(ln) {
+                        if (ln.value === '') {
+                            ln.setCustomValidity('Last Name cannot be empty');
+                        } else {
+                            ln.setCustomValidity('');
+                        }
+                        return true;
+                    }
+                </script>
+            </div>
+            <div>
+                <label for="birth">Date of Birth*:</label>
+                <input type="date" name="birth" id="birth" oninvalid="InvalidBD(this);" oninput="InvalidBD(this);" required="required">
+                <script>
+                    function InvalidBD(bd) {
+                        if (bd.value === '') {
+                            bd.setCustomValidity('Date of Birth cannot be empty');
+                        } else {
+                            bd.setCustomValidity('');
+                        }
+                        return true;
+                    }
+                </script>
+            </div>
+            <div>
+                <label for="street1">Street 1*:</label>
+                <input type="text" name="street1" id="street1" oninvalid="InvalidS1(this);" oninput="InvalidS1(this);" required="required" />
+                <script>
+                    function InvalidS1(s1) {
+                        if (s1.value === '') {
+                            s1.setCustomValidity('Street 1 cannot be empty');
+                        } else {
+                            s1.setCustomValidity('');
+                        }
+                        return true;
+                    }
+                </script>
+            </div>
+            <div>
+                <label for="street2">Street 2:</label>
+                <input type="text" name="street2" id="street2" />
+            </div>
+            <div>
+                <label for="city">City*:</label>
+                <input type="text" name="city" id="city" oninvalid="InvalidCT(this);" oninput="InvalidCT(this);" required="required" />
+                <script>
+                    function InvalidCT(ct) {
+                        if (ct.value === '') {
+                            ct.setCustomValidity('City cannot be empty');
+                        } else {
+                            ct.setCustomValidity('');
+                        }
+                        return true;
+                    }
+                </script>
+            </div>
+            <div>
+                <label for="state">State*:</label>
+                    <select name="state" id="state" oninvalid="InvalidState(this);" oninput="InvalidState(this);" required="required">
+                        <option value="AL">AL</option>
+                        <option value="AK">AK</option>
+                        <option value="AR">AR</option>	
+                        <option value="AZ">AZ</option>
+                        <option value="CA">CA</option>
+                        <option value="CO">CO</option>
+                        <option value="CT">CT</option>
+                        <option value="DC">DC</option>
+                        <option value="DE">DE</option>
+                        <option value="FL">FL</option>
+                        <option value="GA">GA</option>
+                        <option value="HI">HI</option>
+                        <option value="IA">IA</option>	
+                        <option value="ID">ID</option>
+                        <option value="IL">IL</option>
+                        <option value="IN">IN</option>
+                        <option value="KS">KS</option>
+                        <option value="KY">KY</option>
+                        <option value="LA">LA</option>
+                        <option value="MA">MA</option>
+                        <option value="MD">MD</option>
+                        <option value="ME">ME</option>
+                        <option value="MI">MI</option>
+                        <option value="MN">MN</option>
+                        <option value="MO" selected>MO</option>	
+                        <option value="MS">MS</option>
+                        <option value="MT">MT</option>
+                        <option value="NC">NC</option>	
+                        <option value="NE">NE</option>
+                        <option value="NH">NH</option>
+                        <option value="NJ">NJ</option>
+                        <option value="NM">NM</option>			
+                        <option value="NV">NV</option>
+                        <option value="NY">NY</option>
+                        <option value="ND">ND</option>
+                        <option value="OH">OH</option>
+                        <option value="OK">OK</option>
+                        <option value="OR">OR</option>
+                        <option value="PA">PA</option>
+                        <option value="RI">RI</option>
+                        <option value="SC">SC</option>
+                        <option value="SD">SD</option>
+                        <option value="TN">TN</option>
+                        <option value="TX">TX</option>
+                        <option value="UT">UT</option>
+                        <option value="VT">VT</option>
+                        <option value="VA">VA</option>
+                        <option value="WA">WA</option>
+                        <option value="WI">WI</option>	
+                        <option value="WV">WV</option>
+                        <option value="WY">WY</option>
+                    </select>
+                <script>
+                    function InvalidState(state) {
+                        if (state.value === '') {
+                            state.setCustomValidity('State cannot be empty');
+                        } else {
+                            state.setCustomValidity('');
+                        }
+                        return true;
+                    }
+                </script>
+            </div>
+            <div>
+                <label for="zip">Zip Code*:</label>
+                <input type="text" name="zip" id="zip" placeholder="nnnnn-(nnnn)" pattern="^\s*?\d{5}(?:[-\s]\d{4})?\s*?$" required />
+                <script>
+                    var zip = document.getElementById('zip');
+                    zip.oninvalid = function(event) {
+                        event.target.setCustomValidity('Please enter a correct zip code. e.g: 63456 or 63456-2389');
+                    };
+                    zip.oninput = function(event) {
+                        event.target.setCustomValidity('');
+                    };
+                </script>
+            </div>
+            <div>
+                <label>Gender*:</label>
+                <input type="radio"  name="gender" value="Male" required>Male
+                <input type="radio"  name="gender" value="Female" required>Female
+                <input type="radio"  name="gender" value="Unknown" required>Unknown
+            </div>
+            <div id="sectionForm">
+                <label>Race* (select all that apply)</label><br>
+                <input type="checkbox" name="race" value="American Indian/Alaska Native">American Indian/Alaska Native<br>     
+                <input type="checkbox" name="race" value="White">White<br>      
+                <input type="checkbox" name="race" value="Asian">Asian<br>
+                <input type="checkbox" name="race" value="Black/African American">Black/African American<br>
+                <input type="checkbox" name="race" value="Native Hawaiian/Pacific Islander">Native Hawaiian/Pacific Islander<br>
+                <input type="checkbox" name="race" value="Other Race">Other Race<br>
+                <input type="checkbox" name="race" value="Unknown">Unknown
+                <script>
+                    (function() {
+                    const form = document.querySelector('#sectionForm');
+                    const checkboxes = form.querySelectorAll('input[type=checkbox]');
+                    const checkboxLength = checkboxes.length;
+                    const firstCheckbox = checkboxLength > 0 ? checkboxes[0] : null;
+
+                    function loop() {
+                        if (firstCheckbox) {
+                            for (let i = 0; i < checkboxLength; i++) {
+                                checkboxes[i].addEventListener('change', checkValidity);
+                            }
+
+                            checkValidity();
+                        }
+                    }
+
+                    function isChecked() {
+                        for (let i = 0; i < checkboxLength; i++) {
+                             if (checkboxes[i].checked) return true;
+                        }
+                        return false;
+                    }
+
+                    function checkValidity() {
+                        const errorMessage = !isChecked() ? 'At least one checkbox must be selected.' : '';
+                        firstCheckbox.setCustomValidity(errorMessage);
+                    }
+
+                    loop();
+                    })();
+                </script>
+            </div>
+            <div>
+                <label>Ethnicity* </label><br>
+                <input type="radio" name="ethnicity" value="Hispanic or Latino" required>Hispanic or Latino<br>      
+                <input type="radio" name="ethnicity" value="Not Hispanic or Latino" required>Not Hispanic or Latino<br>
+                <input type="radio" name="ethnicity" value="Unknown" required>Unknown<br>   
+            </div>
+            </fieldset>
+            <fieldset id="Info2">
+                <legend>2nd Form:</legend>
+                <h3 id='insurance'>Insurance Information</h3>
+                <div>
+                    <label>Does patient carry insurance?</label>
+                    <input type="radio"  name="Pinsu" value="Yes" onChange="insuselect()">Yes
+                    <input type="radio"  name="Pinsu" value="No" onChange="insuselect()" checked>No
+                    <br>
+                    <label for="insuholder">Primary Insurance holder:</label>
+                    <input type="text" name="insuholder" id="insuholder" disabled>
+                    <br>
+                    <label for="insurer">Insurer:</label>
+                    <input type="text" name="insurer" id="insurer" disabled>
+                    <br>
+                    <label for="idnum">Group/Individual ID number:</label>
+                    <input type="text" name="idnum" id="idnum" disabled>
+                    <script>
+                        function insuselect() {
+                            var result = document.querySelector('input[name="Pinsu"]:checked').value;
+                            if (result === "Yes") {
+                                document.getElementById("insuholder").removeAttribute('disabled');
+                                document.getElementById("insurer").removeAttribute('disabled');
+                                document.getElementById("idnum").removeAttribute('disabled');
+                            } else {
+                                document.getElementById("insuholder").setAttribute('disabled', true);
+                                document.getElementById("insurer").setAttribute('disabled', true);
+                                document.getElementById("idnum").setAttribute('disabled', true);
+                            }
+                        }
+                   </script>
+                </div>
+                <h3 id='site'>Administration Information:</h3>
+                    <div>
+                    <label for="aname">The Administration Name*:</label>
+                    <input type="text" name="aname" id="aname" oninvalid="InvalidAN(this);" oninput="InvalidAN(this);" required="required" />
+                    <script>
+                    function InvalidAN(an) {
+                        if (an.value === '') {
+                            an.setCustomValidity('Administration Name cannot be empty');
+                        } else {
+                            an.setCustomValidity('');
+                        }
+                        return true;
+                    }
+                    </script>
+                    </div>
+                    <div>
+                        <label for="azip">Zip Code*:</label>
+                        <input type="text" name="azip" id="azip" placeholder="nnnnn(-nnnn)" pattern="^\s*?\d{5}(?:[-\s]\d{4})?\s*?$" required />
+                        <script>
+                        var azip = document.getElementById('azip');
+                        azip.oninvalid = function(event) {
+                            event.target.setCustomValidity('Please enter a correct zip code. e.g: 63456 or 63456-2389');
+                        };
+                        azip.oninput = function(event) {
+                            event.target.setCustomValidity('');
+                        };
+                        </script> 
+                    </div>
+                <h3 id='provider'>Provider Information:</h3>
+                    <div>
+                    <label for="pID">Provider ID*:</label>
+                    <input type="number" name="pID" id="pID" placeholder="0XXXXX" oninvalid="InvalidPrID(this);" oninput="InvalidPrID(this);" 
+                           required="required">
+                    <script>
+                        function InvalidPrID(prid) {
+                            if (!prid.value.startsWith('0')) {
+                                prid.setCustomValidity('Provider ID must start with 0');
+                            } else if (prid.value === '') {
+                                prid.setCustomValidity('Provider ID cannot be empty');
+                            } else if (prid.value.length !== 6) {
+                                prid.setCustomValidity('Provider ID must be 6 characters.');
+                            } else {
+                                prid.setCustomValidity('');
+                            }
+                            return true;
+                        }
+                    </script>
+                    </div>
+            </fieldset>
+            <fieldset id="Info3">
+                <legend>3rd Form:</legend>
+                <h3 id='vaccine'>Vaccination Information</h3>
+                <div>
+                    <label for="Type">Vaccine Type:</label>
+                    <input type="text" name="Type" id="Type">
+                    <script>
+                        document.getElementById('Type').value = "COVID-19";
+                    </script>
+                </div>
+                <div>
+                    <label for="Prod">CVX code:</label>
+                    <input type="number" name="Prod" id="Prod" placeholder="2XX">
+                </div>
+                <div>
+                    <label for="Manu">Manufacturer:</label>
+                    <select name="Manu" id="Manu">
+                        <option value="">N/A</option>
+                        <option value="Pfizer">Pfizer</option>
+                        <option value="Moderna">Moderna</option>
+                        <option value="Johnson & Johnson">Johnson & Johnson</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="Lot">Lot Number*:</label>
+                    <input type="text" name="Lot" id="Lot" placeholder="AA0000" value="AA0000" pattern="[A-Za-z]{2}[0-9]{4}" required>
+                    <script>
+                        var lot = document.getElementById('Lot');
+                        lot.oninvalid = function(event) {
+                            event.target.setCustomValidity('Please enter a correct format of the lot number. e.g: HM1234 or hm1234');
+                        };
+                        lot.oninput = function(event) {
+                            event.target.setCustomValidity('');
+                        };
+                    </script> 
+                </div>                
+                <div>
+                  <label for="df">Expiration Date:</label>
+                  <input type="date" name="df" id="df">
+                </div>                
+                <div>
+                    <label>Dose Number*:</label>
+                    <input type="radio" name="Dose" value="1st Dose" required>1st Dose
+                    <input type="radio" name="Dose" value="2nd Dose" required>2nd Dose
+                    <input type="radio" name="Dose" value="3rd Dose" required>3rd Dose  
+                </div>
+                <div>
+                    <label>Administration Site:</label>
+                    <input type="radio" name="Site" value="Left Arm" >Left Arm
+                    <input type="radio" name="Site" value="Right Arm">Right Arm<br>
+                    <label>(Lower Extremity)</label>
+                    <input type="radio" name="Site" value="Left(Lower Extremity)" >Left
+                    <input type="radio" name="Site" value="Right(Lower Extremity)">Right<br>
+                </div>                
+                <div>
+                    <label for="sdf">Date Administered:</label>
+                    <input type="date" name="sdf" id="sdf">
+                    <script>
+                        Date.prototype.toCurrentDate = (function() {
+                            var cts = new Date(this);
+                            cts.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+                            return cts.toJSON().slice(0,10);
+                        });
+                        document.getElementById('sdf').value = new Date().toCurrentDate();
+                    </script>
+                </div>  
+                <div>
+                    <label for="waste">Number of Dose Wasted:</label>
+                    <input type="number" name="waste" id="waste">
+                </div>
+                <div>
+                    <label for="Route">Administration Route:</label>
+                    <input type="text" name="Route" id="Route">
+                    <script>
+                        document.getElementById('Route').value = "C28161 (Intramuscular)";
+                    </script>
+                </div>                
+                <div>
+                    <label>Missed Appointment*:</label>
+                    <input type="radio"  name="Missed" value="Yes" required>Yes
+                    <input type="radio"  name="Missed" value="No" required>No
+                </div>                
+                <div>
+                    <label>Comorbidity*:</label>
+                    <input type="radio"  name="Como" value="Yes" required>Yes
+                    <input type="radio"  name="Como" value="No" required>No
+                </div>                
+                <div>
+                    <label>Refused Vaccination*:</label><br>
+                    <input type="radio" name="refvac" value="No" onChange="selected()" checked required>NO<br>
+                    <input type="radio" name="refvac" value="Yes" onChange="selected()" required>YES
+                    <input type="text" name="refrea" id="refrea" placeholder="Reason:" disabled><br>
+                    <script>
+                        function selected() {
+                            var result = document.querySelector('input[name="refvac"]:checked').value;
+                            if (result === "Yes") {
+                                document.getElementById("refrea").removeAttribute('disabled');
+                            } else {
+                            document.getElementById("refrea").setAttribute('disabled', true);
+                            }
+                        }
+                    </script>
+                </div>
+                <div>
+                    <label for="vacci">Vaccinator:</label>
+                    <input type="text" name="vacci" id="vacci">
+                </div>                
+                <div>
+                    <label>Received EUA Fact Sheet for Recipients*:</label>
+                    <input type="radio"  name="eua" value="Yes" required>Yes
+                    <input type="radio"  name="eua" value="No" required>No
+                </div>
+                <div>
+                    <label>Report an Adverse Event to VAERS:</label>
+                    <a href="https://vaers.hhs.gov/esub/index.jsp" target="_blank" title="Report Adverse Reactions to VAERS">Click here to report</a>
+                </div>
+                <div id="buttons">
+                    <input type="submit" id="submit" value="Submit">
+                    <input type="reset" value="Reset">  
+                </div>
+            </fieldset>
+            
+        </form>
+        
+    </body>
+</html>

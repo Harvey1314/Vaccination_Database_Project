@@ -1,0 +1,159 @@
+/* 
+    Created on : Nov 4, 2024, 10:27:45 AM
+    Author     : trannhi
+*/
+/* 
+    Created on : 17 Oct 2021, 7:55:29 PM
+    Author     : Nicholas Risko
+*/
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: white;
+}
+.form{
+    width: 100%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: lightblue;
+    text-align: center;
+}
+form#patient {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+form#patient > fieldset#Info1, form#patient > fieldset#Info2, form#patient > fieldset#Info3 {
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    float: right;    
+}
+header > h1 {
+   text-align: center;  
+   font-size: 3em;
+   letter-spacing: 0.05em;
+   line-height: 1em;
+   font-family: 'Times New Roman', serif;
+   font-weight: normal;
+}
+div {
+    margin-bottom:10px;
+}
+h1 {
+    color: #686868;
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: lightblue;
+}
+legend { 
+   background-color: lightblue;
+   font-size: 2em;
+   border-radius: 10px;
+   margin-bottom: 10px;
+   padding: 8px;
+   width: 50%;
+   border: solid black 1px;
+}
+.form h1{
+    color: #686868;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.form input[type="text"],.form input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2a93c7;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: #686868;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+.form input[type = "text"]:focus, .form input[type = "password"]:focus{
+    width: 280px;
+    border-color: #2ecc71;
+}
+input[type = "submit"] {
+    border: 0;
+    background: none;
+    display: inline-block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #32e010;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: #686868;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+input[type = "reset"] {
+    border: 0;
+    background: none;
+    display: inline-block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid red;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: #686868;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+input[value="Log Out"] {
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid red;
+    padding: 14px 10px;
+    width: 100px;
+    outline: none;
+    color: #686868;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+input[type = "submit"]:hover{
+    background: #32e010;
+}
+input[type = "reset"]:hover, input[value="Log Out"]:hover{
+    background: red;
+}
+fieldset {
+    display: inline-block;
+    position: relative;
+    background: lightblue;
+    align-content: center;
+    min-height: 750px;
+}
+fieldset label {
+    width:200px;
+    padding-right:10px;
+}
+fieldset label, fieldset input[type="text"] {
+    display:inline-block;
+}
+div#buttons {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    height: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+
+
